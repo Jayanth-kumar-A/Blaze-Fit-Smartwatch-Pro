@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blaze Fit Smartwatch Pro</title>
+  <!-- Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ff5722;
+      --secondary-color: #ff9800;
+      --accent-color: #d84315;
+      --bg-color: #f5f5f5;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --light-text: #555;
+      --border-color: #ffd8bf;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    header p {
+      font-size: 20px;
+      color: #ffe6d9;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+      transition: transform 0.3s ease;
+    }
+    
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    
+    .product img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 5px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-info {
+      flex: 1;
+      max-width: 600px;
+    }
+    
+    .product-info h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+    
+    .product-info p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: var(--light-text);
+    }
+    
+    .price {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+    }
+    
+    .add-to-cart {
+      padding: 15px 30px;
+      background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      outline: none;
+    }
+    
+    .add-to-cart:hover {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+    
+    .info-section {
+      margin-top: 40px;
+      padding: 30px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+    
+    .info-section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+    
+    .info-section ul {
+      list-style: disc inside;
+      margin-left: 20px;
+    }
+    
+    .info-section li {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--text-color);
+    }
+    
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+    }
+    
+    /* Popup for Add to Cart */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px 40px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 100;
+    }
+    
+    .popup.show {
+      display: block;
+    }
+    
+    .popup p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .popup button {
+      padding: 10px 20px;
+      background: #fff;
+      color: var(--primary-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .popup button:hover {
+      background: #ffd8bf;
+    }
+    
+    @media (max-width: 768px) {
+      .product {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .product img {
+        width: 90%;
+        height: auto;
+      }
+    
+      .product-info {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blaze Fit Smartwatch Pro</h1>
+    <p>Your Fitness Partner for the Future</p>
+  </header>
+  
+  <div class="container">
+    <!-- Product Section -->
+    <div class="product">
+      <img src="GyU2p9gZ.jpg" alt="Blaze Fit Smartwatch Pro">
+      <div class="product-info">
+        <h2>Blaze Fit Smartwatch Pro</h2>
+        <p>
+          Experience a new era of fitness technology with the Blaze Fit Smartwatch Pro. Designed with a stunning 1.69" full-touch HD display, it offers seamless Bluetooth calling, advanced health monitoring, and over 100 sports modes. Stay active and connected with its robust IP68 waterproof rating.
+        </p>
+        <p class="price">$129.99</p>
+        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+    
+    <!-- Product Attributes Section -->
+    <div class="info-section">
+      <h3>Product Attributes</h3>
+      <ul>
+        <li><strong>Display:</strong> 1.69" Full Touch HD</li>
+        <li><strong>Connectivity:</strong> Bluetooth Calling & Notifications</li>
+        <li><strong>Sensors:</strong> Heart Rate, SpO2, Sleep Monitoring</li>
+        <li><strong>Sports Modes:</strong> 100+ Modes</li>
+        <li><strong>Waterproof:</strong> IP68 Waterproof</li>
+      </ul>
+    </div>
+    
+    <!-- Product Tags Section -->
+    <div class="info-section">
+      <h3>Tags</h3>
+      <ul>
+        <li>Smartwatch</li>
+        <li>Bluetooth Calling</li>
+        <li>Fitness Tracker</li>
+        <li>Health Monitoring</li>
+        <li>SpO2</li>
+        <li>Heart Rate Monitor</li>
+        <li>IP68 Waterproof</li>
+        <li>Sports Mode</li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Blaze Fit. All rights reserved.</p>
+  </footer>
+  
+  <!-- Popup for Add to Cart -->
+  <div class="popup" id="popup">
+    <p>Product added to cart successfully!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  
+  <script>
+    // Show popup on "Add to Cart"
+    function addToCart() {
+      document.getElementById("popup").classList.add("show");
+    }
+    // Hide popup on button click
+    function closePopup() {
+      document.getElementById("popup").classList.remove("show");
+    }
+  </script>
+</body>
+</html>
